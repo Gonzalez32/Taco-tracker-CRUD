@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <% tacos.forEach((t) => { %>
+        <a href="/tacos/<%= t._id  %>">Taco Detials</a><br>
+        <label for="">Name</label>
+        <div><%= t.name  %> </div>
+        <label for="">Ingredients</label>
+        <div><%= t.ingredients  %> </div>
+        <label for="">Tasty</label>
+        <div><%= t.tasty == true ? 'Tasty!' : 'Gross' %> </div>
+        <form action="/tacos/<%= t._id %>?_method=DELETE" method="POST">
+            <button type="submit">X</button>
+        </form>
+    <% }) %> 
+            <a href="/tacos/new">go back</a>
+</body>
+</html>

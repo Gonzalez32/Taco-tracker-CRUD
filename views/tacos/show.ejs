@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>show Page</h1>
+
+    <form action="/tacos/<%= taco._id %>?_method=PUT" method="POST">
+        <label for="name">name</label>
+        <input type="text" name="name" id="" value="<%= taco.name %> "><br>
+        <label for="">Ingredients Separte with commas</label>
+        <input type="text" name="ingredients" value="<%= taco.ingredients %> "><br>
+        <label for="tasty">Tasty?</label>
+        <input type="checkbox" name="tasty" value="<%= taco.tasty ? "checked" : '' %> "><br>
+        <button type="submit">Add Taco</button>
+    </form>
+</body>
+</html>
